@@ -57,7 +57,7 @@ class UserController {
     try {
         const activationLink = req.params.link;
         await userService.activate(activationLink);
-        return res.redirect('https://github.com/Honchar007');
+        return res.redirect(process.env.CLIENT_URL);
     } catch (e) {
         next(e);
     }
@@ -65,9 +65,10 @@ class UserController {
 
   async getUsers(req, res, next) {
     try {
-      res.json(['123','435']);
+        const users = await userService.getAllUsers();
+        return res.json(users);
     } catch (e) {
-      next(e)
+        next(e);
     }
   }
 }
