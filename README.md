@@ -1,0 +1,1 @@
+In this project, I discovered crypto/decrypto passwords, verify accounts by mail, refresh/create tokens(generate tokens) and so on.
